@@ -381,6 +381,32 @@ img {
   background: #6c757d;
 }
 
+.pub-links {
+  display: inline-flex;
+  gap: 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.pub-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.pub-pdf:hover {
+  color: #fff;
+  background: var(--color-accent);
+}
+
 /* ===== Experience Section ===== */
 .experience-grid {
   display: grid;

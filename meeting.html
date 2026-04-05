@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Meeting — Jin Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    .meeting-hero {
+      padding-top: calc(var(--nav-height) + 60px);
+      padding-bottom: 32px;
+      text-align: center;
+    }
+    .meeting-greeting {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+    .cal-embed {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .cal-embed iframe {
+      width: 100%;
+      min-height: 700px;
+      border: none;
+      border-radius: var(--radius);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">Jin Park</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#service">Service</a></li>
+        <li><a href="meeting.html" class="nav-contact">Meet</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="meeting-hero">
+    <div class="container">
+      <h1 style="font-size:2rem; color:var(--color-primary); margin-bottom:16px;">Book a Chat</h1>
+      <p class="meeting-greeting">
+        I am always happy to chat about research ideas, potential collaborations, or anything beyond work (e.g., life in Cambridge).
+        Feel free to grab a 30-minute slot on a weekend that works for you.
+      </p>
+    </div>
+  </section>
+
+  <div class="cal-embed">
+    <!-- Replace YOUR_USERNAME with your Cal.com username -->
+    <iframe src="https://cal.eu/jinpark/30min" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    // Nav toggle for mobile
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>
